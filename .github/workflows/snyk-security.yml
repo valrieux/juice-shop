@@ -42,12 +42,12 @@ jobs:
         with:
           node-version: '18.x'
       - name: code-analysis
-        run: code test
+        run: snyk code test
         env:
           # This is where you will need to introduce the Snyk API token created with your Snyk account
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       - name: sca-analysis
-        run: test
+        run: snyk test
         env:
           # This is where you will need to introduce the Snyk API token created with your Snyk account
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
